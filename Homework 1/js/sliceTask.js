@@ -6,6 +6,14 @@ function forSliceTask() {
   function slice(arr, start = 0, end = arr.length) {
     let resultArrAfterSlice = [];
 
+    if(start < 0) {
+      start = arr.length + start;//8 + (-start)
+    }
+
+    if(end < 0) {
+      end = arr.length + end;
+    }
+
     for (let i = start; i < end; i++) {
       resultArrAfterSlice.push(arr[i]);
     }
@@ -20,7 +28,7 @@ function forSliceTask() {
     return resultArrAfterSlice;
   }
 
-  let slicedArr = slice(array, 2, 4);
+  let slicedArr = slice(array, -2);
 
   alert(`Array: ${array}` + '\n' + `Sliced array: ${slicedArr}`);
 }
@@ -31,6 +39,14 @@ function ourSliceInPrototype() {
 
   function slice(start = 0, end = this.length) {
     let resultArrAfterSlice = [];
+
+    if(start < 0) {
+      start = arr.length + start;//8 + (-start)
+    }
+
+    if(end < 0) {
+      end = arr.length + end;
+    }
 
     for (let i = start; i < end; i++) {
       resultArrAfterSlice.push(this[i]);

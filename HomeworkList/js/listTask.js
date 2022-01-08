@@ -7,17 +7,24 @@ function Node(value, prev, next) {
 function LinkedList() {
   this.front = null;
   this.end = null;
-
-  this.length = 0;//for count() function 
 }
 
 LinkedList.prototype = {
   count: function () {
-    return this.length;
+    let count = 0;
+    let currentNode = this.front;
+
+    while (currentNode !== null) {
+      count++;
+      currentNode = currentNode.next;
+    }
+
+    return count;
   },
 
   push: function (value) {
     let addingNode = new Node(value, this.end, null);
+
     if (this.end === null) {//empty list
       this.front = addingNode;
       this.end = addingNode;
@@ -26,12 +33,11 @@ LinkedList.prototype = {
       this.end = addingNode;
     }
 
-    this.length++;
-    return this.length;//The push() method returns the new length.
   },
 
   pop: function () {
     let poppedNodeValue;
+
     if (this.end === null) {
       console.log("Can't pop. No element in list.");
       return;
@@ -45,12 +51,12 @@ LinkedList.prototype = {
       }
     }
 
-    this.length--;
     return poppedNodeValue;//The pop() method returns the removed element.
   },
 
   unshift: function (value) {
     let addingNode = new Node(value, null, this.front);
+
     if (this.front === null) {
       this.front = addingNode;
       this.end = addingNode;
@@ -59,8 +65,6 @@ LinkedList.prototype = {
       this.front = addingNode;
     }
 
-    this.length++;
-    return this.length;//The unshift() method returns the new length.
   },
 
   shift: function () {
@@ -111,7 +115,6 @@ LinkedList.prototype = {
           rightNode.prev = leftNode;
         }
 
-        this.length--;
         console.log("Node was deleted.");
         return this;//will return list
       } else {
@@ -124,7 +127,7 @@ LinkedList.prototype = {
   },
 
   insert: function (index, value) {//let suppose that our LinkedList has indexes
-    //in place [index] node will be added in node with [value]
+    //in place [index] node will be added new node with [value]
     if (index > this.count() + 1) {
       console.log(`Your list no such big.List length is ${this.count()}.`);
       return this;
@@ -141,7 +144,7 @@ LinkedList.prototype = {
     }
 
     let currentNode = this.front;
-    for (let i = 1; i < index; i++) {
+    for (let i = 1; i < index - 1; i++) {
       currentNode = currentNode.next;
     }//after the loop the next of the currentNode must be added a newNode
     //... <-> [currentNode] <-> [newNode] <-> [currentNode.next] <-> ...
@@ -151,7 +154,6 @@ LinkedList.prototype = {
     currentNode.next = newNode;
     nextNodeAfterAdded.prev = newNode;
 
-    this.length++;
     return this;
   },
 
@@ -169,7 +171,6 @@ LinkedList.prototype = {
   }
 
 }
-
 
 
 let list = new LinkedList();

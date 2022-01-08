@@ -82,7 +82,6 @@ LinkedList.prototype = {
       }
     }
 
-    this.length--;
     return shiftedNodeValue;//The shift() method returns the removed element.
   },
 

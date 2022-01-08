@@ -176,5 +176,8 @@ let list = new LinkedList();
 list.push(7);
 list.push(77);
 list.push(777);
+list.unshift(8);
+list.unshift(88);
 list.unshift(888);
+console.log(list.count());
 console.log(list.printList());

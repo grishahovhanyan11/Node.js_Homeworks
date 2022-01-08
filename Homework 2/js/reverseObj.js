@@ -6,7 +6,7 @@ function reverseButtonClicked() {
       if (Array.isArray(obj[key])) {//if ARRAY -> create string
         let arrInStr = obj[key].join();
         revObj[arrInStr] = key;
-      } else if (typeof obj[key] === "object") {
+      } else if (typeof obj[key] === "object" && obj[key] !== null) {
         revObj[key] = reverseObj(obj[key]);
       } else {
         revObj[obj[key]] = key;

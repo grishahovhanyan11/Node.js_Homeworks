@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avengers</title>
+</head>
+
+<body id="body">
+  <div><strong>Create 2 arrays: heroes and villains</strong>
+    <p>Fill those arrays with 10 characters(objects) with these properties:</p>
+    <ul>
+      <li>name: somehow generate a random name,</li>
+      <li>speed: random number from 1 to 5, 1 means 5 seconds and 5 means the 1-second interval between each attack</li>
+      <li>health: equal to 100</li>
+      <li>power: random number from 1 to 10</li>
+    </ul>
+    <p></p>
+    Villains and heroes will attack each other.
+    <p></p>
+    All characters start to attack at the same time(first can start villains). Each character hits a random enemy on his
+    turn and the enemy's health decreases by the amount of the character's power.<p></p>
+    When a character dies he/she are removed from the array.
+    Every character makes his next attack after (1/speed * 5 ) seconds.
+    <strong>(in console)</strong>
+  </div>
+  <hr>
+  <button style="margin: 0 auto; display: block;" id="startButton">Start attack</button>
+  <hr>
+
+</body>
+
+<script src="js/creatCharacters.js"></script>
+<script src="js/attack.js"></script>
+
+<link href='css/styled.css' rel='stylesheet'>
+</link>
+
+</html>

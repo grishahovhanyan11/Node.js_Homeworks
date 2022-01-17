@@ -19,6 +19,7 @@ function char1AttackChar2(character1, character2) {
 
 function findTeamThatWon(teamThatLost) {
   let teamThatWin;
+  console.log("--------------------")
   if(teamThatLost === heroes) {
     teamThatWin = villains;
     console.log("Villains win.")
@@ -52,7 +53,7 @@ function addSetInterval(char, charArrWhichWillBeAttacked) {
     if(charArrWhichWillBeAttacked.length === 0) {
       findTeamThatWon(charArrWhichWillBeAttacked)
     }
-  }, attackInterval);
+  }, attackInterval * 1000);
 
   char.intervalId = id;
 }

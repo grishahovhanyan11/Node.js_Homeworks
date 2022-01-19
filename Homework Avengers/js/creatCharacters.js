@@ -1,5 +1,3 @@
-let startAttackButton = document.getElementById("startButton");
-
 function randomInteger(max, min) {
   return Math.round(Math.random() * (max - min) + min)
 }
@@ -10,8 +8,9 @@ function randomDecimal(max, min) {
 
 function fillArray(namesArr) {
   let resultCharacters = [];
+  let loopIterationCount = namesArr.length;
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < loopIterationCount; i++) {
     let randomIndexForName = randomInteger(0, namesArr.length - 1);
     let currentHeroObj = {
       name: namesArr[randomIndexForName],
@@ -35,7 +34,7 @@ function fillArray(namesArr) {
 const heroNames = ["Wolverine", "Spider-Man", "Thor", "Iron-Man", "Hulk",
   "Captain-America", "Deadpool", "Doctor-Strange", "Black-Panther", "Black-Widow"];
 
-const villainNames = ["Green-Goblin", "Hela", "Mysterio", "Xu-Wenwu", "Doctor-Octopus", 
+const villainNames = ["Green-Goblin", "Hela", "Mysterio", "Xu-Wenwu", "Doctor-Octopus",
   "Magneto", "Loki", "Killmonger", "Thanos", "Vulture"];
 
 let heroes = fillArray(heroNames);

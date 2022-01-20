@@ -1,3 +1,13 @@
+class Character {
+  speedLevel = +randomDecimal(1, 5);
+  health = 100;
+  power = +randomDecimal(1, 10);
+  
+  constructor(name) {
+    this.name = name;
+  }
+}
+
 function randomInteger(max, min) {
   return Math.round(Math.random() * (max - min) + min)
 }
@@ -12,14 +22,9 @@ function fillArray(namesArr) {
 
   for (let i = 0; i < loopIterationCount; i++) {
     let randomIndexForName = randomInteger(0, namesArr.length - 1);
-    let currentHeroObj = {
-      name: namesArr[randomIndexForName],
-      speedLevel: +randomDecimal(1, 5),
-      health: 100,
-      power: +randomDecimal(1, 10)
-    };
+    let currentCharacter = new Character(namesArr[randomIndexForName]);
 
-    resultCharacters.push(currentHeroObj);
+    resultCharacters.push(currentCharacter);
 
     let temp = namesArr[namesArr.length - 1];
     namesArr[namesArr.length - 1] = namesArr[randomIndexForName];

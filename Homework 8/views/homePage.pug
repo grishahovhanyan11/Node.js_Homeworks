@@ -1,0 +1,28 @@
+html
+  head
+    title Contacts 
+    link(rel="stylesheet" href="/homePage.css")
+    link(rel="stylesheet" href="/common.css")
+  body
+    h1 Contacts 
+    a(href="/contacts/new")
+      button.common-button(type="button")  Add contact
+    div(style= "margin: 20px 20px 0px 10px")
+      table#contacts-table 
+        tr
+          th(style= "color: red") Full Name
+          th(style= "color: red") Phone
+          th(style= "color: red") Edit
+        each contact in contacts 
+          tr
+            td= contact.fullName
+            td= contact.phone
+            td 
+              a(href="/contacts/edit/" + contact.Id) Edit
+          
+
+        
+        
+
+
+

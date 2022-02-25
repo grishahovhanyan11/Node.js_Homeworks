@@ -1,0 +1,26 @@
+html
+  head
+    title Edit Contact 
+    link(rel="stylesheet" href="/common.css")
+  body
+    h1 Edit Contact
+    a(href="/" style="margin-left: 15px") All contacts 
+    if(notValidValue)
+      p.validation= message 
+    .container 
+      form(method="post" action="/contacts/edit/" + contact.Id)
+        p Contact FullName
+        input.input-field(name= "contName" value= contact.fullName)
+        p Contact Phone
+        input.input-field(name= "contPhone" value= contact.phone) 
+        br
+        button(type="submit").common-button Save changes
+      form(action="/contacts/delete/" + contact.Id method="post") 
+        button(type="submit").common-button Delete contact
+          
+
+        
+        
+
+
+

@@ -8,14 +8,14 @@ html
     if(notValidValue)
       p.validation= message 
     .container 
-      form(method="post" action="/contacts/edit/" + contact.Id)
+      form(method="post" action=`/contacts/edit/${contact.Id}?_method=PUT`)
         p Contact FullName
         input.input-field(name= "contName" value= contact.fullName)
         p Contact Phone
         input.input-field(name= "contPhone" value= contact.phone) 
         br
         button(type="submit").common-button Save changes
-      form(action="/contacts/delete/" + contact.Id method="post") 
+      form(method="post" action=`/contacts/delete/${contact.Id}?_method=DELETE`)
         button(type="submit").common-button Delete contact
           
 

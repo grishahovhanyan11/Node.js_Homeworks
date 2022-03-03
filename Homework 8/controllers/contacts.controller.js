@@ -37,7 +37,7 @@ module.exports = {
       contact: db.contacts[contactIndexInDb]
     });
   },
-  editContactPOST: (req, res) => {
+  editContactPUT: (req, res) => {
     const { contactId } = req.params;
     db.editContact(contactId, req.body)
     res.redirect("/");

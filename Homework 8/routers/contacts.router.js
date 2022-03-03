@@ -9,8 +9,8 @@ contactsRouters
   .get("/new", contactsController.newContactGET)
   .post("/new", validationMid, contactsController.newContactPOST)
   .get("/edit/:contactId", contactsController.editContactGET)
-  .post("/edit/:contactId", validationMid, contactsController.editContactPOST)
-  .post("/delete/:contactId", contactsController.deleteContact);
+  .put("/edit/:contactId", validationMid, contactsController.editContactPUT)
+  .delete("/delete/:contactId", contactsController.deleteContact);
 
 contactsRouters.use((err, req, res, next) => {
   console.log("Error from: contacts.router.js -> ", err);

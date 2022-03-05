@@ -1,4 +1,6 @@
 const db = require("../src/getDB");
+const { newContactInDb } = require("../services/contacts.service");
+
 
 module.exports = {
   contactsGET: (req, res) => {
@@ -9,20 +11,7 @@ module.exports = {
     res.render("newContact");
   },
   newContactPOST: (req, res) => {
-    let newContactId;
-    if (db.contacts.length === 0) {// if no contacts 
-      newContactId = 1;
-    } else {
-      newContactId = db.contacts[db.contacts.length - 1].Id + 1;// find max index 
-    }
-
-    const newContact = {
-      Id: newContactId,
-      fullName: req.body.contName,
-      phone: req.body.contPhone
-    }
-
-    db.setContacts([...db.contacts, newContact]);
+    newContactInDb(req.body);
     res.redirect("/");
   },
   editContactGET: (req, res) => {

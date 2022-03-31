@@ -1,8 +1,8 @@
 const path = require('path');
-const { findFilesAndSizesInPath } = require('../local_modules/find');
-const { sortAndWriteFilesInTxt } = require('../local_modules/sortFiles')
+const { findFilesAndSizesInPath } = require('../utils/find');
+const { sortAndWriteFilesInTxt } = require('../utils/sortFiles')
 
-let givenDirectory = process.argv[2];
+let givenDirectory = process.argv[2];// after npm start ...
 
 if (givenDirectory.startsWith('.')) {
   givenDirectory = path.resolve(givenDirectory);

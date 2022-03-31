@@ -32,5 +32,5 @@ const obj = {
       home: "1"
     }
   },
-  friends: ["Leo", "Daneil"]
+  friends: ["Leo", "Jack"]
 };

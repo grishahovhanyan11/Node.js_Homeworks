@@ -18,7 +18,7 @@ function forMapTask() {
     return resultArrAfterMap;
   }
 
-  alert(`Array: ${array}` + '\n' + `Maped array: ${map(array, (item, index, array) => item * 5)}`);
+  alert(`Array: ${array}` + '\n' + `Mapped array: ${map(array, (item, index, array) => item * 5)}`);
 }
 
 //in Prototype 
@@ -36,7 +36,7 @@ function ourMapInPrototype() {
   }
 
   Array.prototype.ourMap = map;
-  let mapedArray = array.ourMap(item => item * 7);
+  let mappedArray = array.ourMap(item => item * 7);
 
-  alert(`Array: ${array}` + '\n' + `Maped array: ${mapedArray}`);
+  alert(`Array: ${array}` + '\n' + `Mapped array: ${mappedArray}`);
 }

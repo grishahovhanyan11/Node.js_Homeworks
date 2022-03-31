@@ -1,4 +1,3 @@
-const moment = require('moment');
-const createClockFile = require('../local_modules/createFile');
+const createClockFile = require('../utils/createFile');
 
 createClockFile();
